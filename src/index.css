@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  /* Hide default cursor when custom cursor is active */
+  * {
+    cursor: none !important;
+  }
+
+  /* Show default cursor on mobile devices */
+  @media (max-width: 768px) {
+    * {
+      cursor: auto !important;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-600 dark:bg-blue-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-700 dark:bg-blue-600;
+}
+
+/* Smooth transitions for dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom selection color */
+::selection {
+  @apply bg-blue-600 text-white;
+}
